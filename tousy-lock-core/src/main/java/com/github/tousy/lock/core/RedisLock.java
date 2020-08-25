@@ -41,7 +41,7 @@ public class RedisLock implements Closeable {
     /**
      * RedisLock构造
      *
-     * @param redisClientWrapper   redis操作类
+     * @param redisClient   redis操作类
      * @param lockKey              锁key
      * @param expireInMilliseconds 有效期
      */
@@ -75,7 +75,6 @@ public class RedisLock implements Closeable {
     /**
      * 尝试获取分布式锁
      *
-     * @param value value
      * @return 获取结果
      */
     public boolean tryLock() {
