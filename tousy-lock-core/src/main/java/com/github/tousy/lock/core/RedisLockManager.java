@@ -2,13 +2,13 @@ package com.github.tousy.lock.core;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import com.google.common.annotations.Beta;
-import com.google.common.base.Strings;
 
 public class RedisLockManager implements Closeable {
 
@@ -26,7 +26,7 @@ public class RedisLockManager implements Closeable {
     }
 
     public RedisLock fetch(String lockKey, long expireInMilliseconds, String value) {
-        if (Strings.isNullOrEmpty(value)) {
+        if (Objects.isNull(value) || "".equals(value)) {
             return fetch(lockKey, expireInMilliseconds);
         }
         return new RedisLock(this.redisClient, lockKey, expireInMilliseconds, value);

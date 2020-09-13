@@ -3,11 +3,11 @@ package com.github.tousy.lock.core;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +41,7 @@ public class RedisLock implements Closeable {
     /**
      * RedisLock构造
      *
-     * @param redisClient   redis操作类
+     * @param redisClient          redis操作类
      * @param lockKey              锁key
      * @param expireInMilliseconds 有效期
      */
@@ -56,13 +56,13 @@ public class RedisLock implements Closeable {
     /**
      * RedisLock构造，可以自己指定value
      *
-     * @param redisClient   redis操作类
+     * @param redisClient          redis操作类
      * @param lockKey              锁key
      * @param expireInMilliseconds 有效期
      * @param value                指定存储的value，不能为空值
      */
     public RedisLock(IRedisClient redisClient, String lockKey, long expireInMilliseconds, String value) {
-        if (Strings.isNullOrEmpty(value)) {
+        if (Objects.isNull(value) || "".equals(value)) {
             throw new RuntimeException("value could not be null or empty");
         }
         this.redisClient = redisClient;
@@ -80,7 +80,7 @@ public class RedisLock implements Closeable {
     public boolean tryLock() {
         try {
             String result = redisClient.setnx(lockKey, value, expireInMilliseconds);
-            acquired = !Strings.isNullOrEmpty(result) && result.equalsIgnoreCase("OK");
+            acquired = "OK".equalsIgnoreCase(result);
             return acquired;
         } catch (Exception ex) {
             LOGGER.error("error when tryLock, key: " + this.lockKey, ex);
