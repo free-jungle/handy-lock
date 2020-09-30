@@ -13,5 +13,5 @@ handy-lock是一个简易的redis分布式锁实现类库。它并不像redissio
 
 ## 未来规划
 
-* 发布github，gitee
+* 单元测试
 * 发布到maven中央仓库
