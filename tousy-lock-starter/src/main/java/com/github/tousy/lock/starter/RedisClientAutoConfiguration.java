@@ -23,7 +23,6 @@ public class RedisClientAutoConfiguration {
                 RedisTemplate<String, ?> redisTemplate) {
             return new RedisTemplateClientImpl(redisTemplate);
         }
-
     }
 
 }
