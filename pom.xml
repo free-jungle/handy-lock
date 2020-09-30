@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.tousy.lock</groupId>
-    <artifactId>tousy-lock</artifactId>
+    <groupId>com.github.free.monkey</groupId>
+    <artifactId>handy-lock</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>tousy-lock-core</module>
-        <module>tousy-lock-starter</module>
-        <module>tousy-lock-examples</module>
+        <module>handy-lock-core</module>
+        <module>handy-lock-starter</module>
+        <module>handy-lock-examples</module>
     </modules>
 
     <properties>
@@ -24,18 +24,18 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.tousy.lock</groupId>
-                <artifactId>tousy-lock-core</artifactId>
+                <groupId>com.github.free.monkey</groupId>
+                <artifactId>handy-lock-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.tousy.lock</groupId>
-                <artifactId>tousy-lock-starter</artifactId>
+                <groupId>com.github.free.monkey</groupId>
+                <artifactId>handy-lock-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.tousy.lock</groupId>
-                <artifactId>tousy-lock-examples</artifactId>
+                <groupId>com.github.free.monkey</groupId>
+                <artifactId>handy-lock-examples</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
