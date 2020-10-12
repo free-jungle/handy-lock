@@ -6,7 +6,11 @@ handy-lock是一个简易的redis分布式锁实现类库。它并不像redissio
 ## 引用
 
 ```xml
-
+<dependency>
+    <groupId>com.github.free-jungle</groupId>
+    <artifactId>handy-lock-starter</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ## 使用举例

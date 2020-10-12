@@ -7,7 +7,7 @@
     <groupId>com.github.free-jungle</groupId>
     <artifactId>handy-lock</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>handy-lock</name>
     <url>https://github.com/free-jungle/handy-lock</url>
     <description>handy-lock is a simple redis distributed lock implementation class library.</description>
