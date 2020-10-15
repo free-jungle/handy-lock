@@ -9,14 +9,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RedisDistributedLockable {
 
-    /**
-     * 原始格式key
-     */
+    // 原始格式key
     String key() default "";
 
-    /**
-     * SpEL格式key，解析优先级高于key
-     */
+    // SpEL格式key，解析优先级高于key
     String keySpel() default "";
 
     long expireInMilliseconds();

@@ -54,10 +54,13 @@ public class RedisLockManager implements Closeable {
      *
      * @param lockKey              key
      * @param expireInMilliseconds 有效期，单位毫秒
+     * @param value                锁的value
      * @return 返回RedisLock对象
      * @throws LockFailException 锁获取失败，抛出异常
      */
-    public RedisLock fetchAndTryLock(String lockKey, long expireInMilliseconds, String value) throws LockFailException {
+    public RedisLock fetchAndTryLock(String lockKey,
+                                     long expireInMilliseconds,
+                                     String value) throws LockFailException {
         RedisLock redisLock = fetch(lockKey, expireInMilliseconds, value);
         boolean success = redisLock.tryLock();
         if (success) {
@@ -94,9 +97,13 @@ public class RedisLockManager implements Closeable {
      * @param waitInMilliseconds   两次获取之间的等待时长，单位毫秒
      * @param tryCount             尝试获取次数
      * @return RedisLock对象
-     * @throws LockFailException
+     * @throws LockFailException 当获取锁失败时
      */
-    public RedisLock fetchAndTryLock(String lockKey, long expireInMilliseconds, String value, long waitInMilliseconds, int tryCount) throws LockFailException {
+    public RedisLock fetchAndTryLock(String lockKey,
+                                     long expireInMilliseconds,
+                                     String value,
+                                     long waitInMilliseconds,
+                                     int tryCount) throws LockFailException {
         RedisLock redisLock = fetch(lockKey, expireInMilliseconds, value);
         boolean success = redisLock.tryLock(waitInMilliseconds, tryCount);
         if (success) {
