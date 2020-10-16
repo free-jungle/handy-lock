@@ -87,7 +87,7 @@ public void lockUserAnnotationWithSpel(String id) {
 
 适用于key需要根据入参动态拼装的情况，其中keySpel是spel表达式
 
-### 例4: 自动延长过期时间的分布式锁
+### 例4: 自动延长过期时间的分布式锁[推荐]
 
 上面的用法有一个困难的问题，就是过期时间参数(expireInMilliseconds)的配置可能很难，因为：
 
