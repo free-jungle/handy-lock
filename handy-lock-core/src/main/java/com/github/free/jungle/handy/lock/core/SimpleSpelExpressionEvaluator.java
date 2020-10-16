@@ -9,7 +9,6 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 /**
  * @author wangxiaoming
  * @version 1.0
- * @date 2020-05-14
  */
 public class SimpleSpelExpressionEvaluator {
 
